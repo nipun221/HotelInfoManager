@@ -1,0 +1,158 @@
+#include <iostream>
+using namespace std;
+
+int main(){
+    int quant, choice;
+    int Qrooms=0, Qpasta=0, Qburger=0, Qnoodles=0, Qroll=0, Qshakes=0;
+    int Srooms=0, Spasta=0, Sburger=0, Snoodles=0, Sroll=0, Sshakes=0;
+    int Trooms=0, Tpasta=0, Tburger=0, Tnoodles=0, Troll=0, Tshakes=0;
+    cout<<"Quantities of item we have. "<<endl;
+    cout<<"Quantity of rooms : "; cin>>Qrooms;
+    cout<<"Quantity of pasta : "; cin>>Qpasta;
+    cout<<"Quantity of burger : "; cin>>Qburger;
+    cout<<"Quantity of noodles : "; cin>>Qnoodles;
+    cout<<"Quantity of roll : "; cin>>Qroll;
+    cout<<"Quantity of shakes : "; cin>>Qshakes;
+
+    m:
+    cout<<"\t\t\tPlease select from the menu. "<<endl;
+
+    cout<<"1) rooms"<<endl;
+    cout<<"2) pasta"<<endl;
+    cout<<"3) burger"<<endl;
+    cout<<"4) noodles"<<endl;
+    cout<<"5) roll"<<endl;
+    cout<<"6) shakes"<<endl;
+    cout<<"7) Information regarding sales"<<endl;
+    cout<<"8) Exit"<<endl;
+
+    cout<<"Enter your choice : "; cin>>choice;
+
+    switch(choice)
+    {
+        case 1:
+            cout<<"Enter the number of rooms you want : "; cin>>quant;
+            if (Qrooms-Srooms >= quant)
+            {
+                Srooms=Srooms+quant;
+                Trooms=Trooms+ quant*1200;
+                cout<<quant<<" rooms have been alloted to you."<<endl;
+            }
+            else
+            {
+                cout<<"only "<<Qrooms-Srooms<<" rooms are availabe in the hotel."<<endl;
+                
+            }
+            break;
+        case 2:
+            cout<<"Enter the quantity of pasta you want : "; cin>>quant;
+            if (Qpasta-Spasta >= quant)
+            {
+                Spasta=Spasta+quant;
+                Tpasta=Tpasta+ quant*95;
+                cout<<quant<<" pasta have been ordered."<<endl;
+            }
+            else
+            {
+                cout<<"only "<<Qpasta-Spasta<<" pasta are availabe in the hotel."<<endl;
+                
+            }
+            break;
+        case 3:
+            cout<<"Enter the quantity of burger you want : "; cin>>quant;
+            if (Qburger-Sburger >= quant)
+            {
+                Sburger=Sburger+quant;
+                Tburger=Tburger+ quant*60;
+                cout<<quant<<" burger have been ordered."<<endl;
+            }
+            else
+            {
+                cout<<"only "<<Qburger-Sburger<<" burger are availabe in the hotel."<<endl;
+                
+            }
+            break;    
+        case 4:
+            cout<<"Enter the quantity of noodles you want : "; cin>>quant;
+            if (Qnoodles-Snoodles >= quant)
+            {
+                Snoodles=Snoodles+quant;
+                Tnoodles=Tnoodles+ quant*80;
+                cout<<quant<<" noodles have been ordered."<<endl;
+            }
+            else
+            {
+                cout<<"only "<<Qnoodles-Snoodles<<" noodles are availabe in the hotel."<<endl;
+                
+            }
+            break;    
+        case 5:
+            cout<<"Enter the quantity of roll you want : "; cin>>quant;
+            if (Qroll-Sroll >= quant)
+            {
+                Sroll=Sroll+quant;
+                Troll=Troll+ quant*100;
+                cout<<quant<<" roll have been ordered."<<endl;
+            }
+            else
+            {
+                cout<<"only "<<Qroll-Sroll<<" roll are availabe in the hotel."<<endl;
+                
+            }
+            break;
+        case 6:
+            cout<<"Enter the quantity of shakes you want : "; cin>>quant;
+            if (Qshakes-Sshakes >= quant)
+            {
+                Sshakes=Sshakes+quant;
+                Tshakes=Tshakes+ quant*60;
+                cout<<quant<<" shakes have been ordered."<<endl;
+            }
+            else
+            {
+                cout<<"only "<<Qshakes-Sshakes<<" shakes are availabe in the hotel."<<endl;
+                
+            }
+            break;
+        case 7:
+            cout<<"Information regarding sales. "<<endl;
+            cout<<"Number of rooms we had : "<<Qrooms<<endl;
+            cout<<"Number of rooms we gave for rent : "<<Srooms<<endl;
+            cout<<"Number of rooms remaining : "<<Qrooms-Srooms<<endl;
+            cout<<"Total room collection of the day : "<<Trooms<<endl;
+
+            cout<<"Number of pasta we had : "<<Qpasta<<endl;
+            cout<<"Number of pasta sold : "<<Spasta<<endl;
+            cout<<"Number of pasta remaining : "<<Qpasta-Spasta<<endl;
+            cout<<"Total pasta collection of the day : "<<Tpasta<<endl;
+
+            cout<<"Number of burger we had : "<<Qburger<<endl;
+            cout<<"Number of burger sold : "<<Sburger<<endl;
+            cout<<"Number of burger remaining : "<<Qburger-Sburger<<endl;
+            cout<<"Total burger collection of the day : "<<Tburger<<endl;
+
+            cout<<"Number of noodles we had : "<<Qnoodles<<endl;
+            cout<<"Number of noodles sold : "<<Snoodles<<endl;
+            cout<<"Number of noodles remaining : "<<Qnoodles-Snoodles<<endl;
+            cout<<"Total noodles collection of the day : "<<Tnoodles<<endl;
+
+            cout<<"Number of roll we had : "<<Qroll<<endl;
+            cout<<"Number of roll sold : "<<Sroll<<endl;
+            cout<<"Number of roll remaining : "<<Qroll-Sroll<<endl;
+            cout<<"Total roll collection of the day : "<<Troll<<endl;
+
+            cout<<"Number of shakes we had : "<<Qshakes<<endl;
+            cout<<"Number of shakes sold : "<<Sshakes<<endl;
+            cout<<"Number of shakes remaining : "<<Qshakes-Sshakes<<endl;
+            cout<<"Total shakes collection of the day : "<<Tshakes<<endl;
+
+            cout<<"Total collection of the day : "<<Trooms+Tpasta+Tburger+Tnoodles+Troll+Tshakes<<endl;
+
+        case 8:
+            exit(0);
+
+        default:
+            cout<<"Please enter the number mentioned above!!!"<<endl;
+    }
+    goto m;
+}    
